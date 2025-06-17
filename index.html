@@ -99,13 +99,19 @@
         }
         .experience-item, .education-item {
             margin-bottom: 2rem;
-            padding-bottom: 2rem;
+            padding: 1rem;
             border-bottom: 1px solid #eee;
+            border-radius: 1rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .experience-item:last-child, .education-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
+        }
+        .experience-item:hover, .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         .experience-item h3, .education-item h3 {
             font-size: 1.75rem;
@@ -143,6 +149,10 @@
         .skill-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .company-name {
+            color: #2980b9; /* Um azul ligeiramente mais escuro para nomes de empresas */
+            font-weight: 600;
         }
         .contact-info p {
             margin-bottom: 0.75rem;
@@ -207,10 +217,10 @@
     <div class="container mt-8">
         <section id="summary" class="section">
             <h2><i data-lucide="info"></i>Resumo</h2>
-            <p class="text-lg text-gray-700">Engenheiro Mecânico com mais de 25 anos de experiência em manutenção industrial, engenharia civil, infraestrutura e segurança do trabalho, atuando em empresas de grande porte como Grupo Cordeiro, Assaí Atacadista, Grupo Pão de Açúcar e Queiroz Galvão.</p>
-            <p class="text-lg text-gray-700 mt-4">Possui sólida formação com especializações em Gestão de Projetos, Engenharia de Segurança e Gestão Empresarial, além de forte atuação em liderança de equipes multidisciplinares, planejamento estratégico, controle de custos e conformidade legal (NRs e SSMA).</p>
-            <p class="text-lg text-gray-700 mt-4">Tem histórico comprovado de entrega de resultados, com foco em eficiência operacional, redução de custos, melhoria contínua e excelência técnica.</p>
-            <p class="text-lg text-gray-700 mt-4">Busca contribuir com organizações que valorizem inovação, segurança e performance em engenharia.</p>
+            <p class="text-lg text-gray-700">Engenheiro Mecânico com 25+ anos de experiência em manutenção industrial, engenharia civil, infraestrutura e segurança do trabalho, atuando em grandes empresas como Grupo Cordeiro, Assaí Atacadista, Grupo Pão de Açúcar e Queiroz Galvão.</p>
+            <p class="text-lg text-gray-700 mt-4">Sólida formação em Gestão de Projetos, Engenharia de Segurança e Gestão Empresarial. Experiência em liderança de equipes multidisciplinares, planejamento estratégico, controle de custos e conformidade legal (NRs e SSMA).</p>
+            <p class="text-lg text-gray-700 mt-4">Histórico comprovado de resultados, focado em eficiência operacional, redução de custos, melhoria contínua e excelência técnica.</p>
+            <p class="text-lg text-gray-700 mt-4">Busca contribuir com organizações que valorizam inovação, segurança e performance em engenharia.</p>
         </section>
 
         <section id="experience" class="section">
@@ -218,104 +228,106 @@
 
             <div class="experience-item">
                 <h3>Gerente de Engenharia e Manutenção</h3>
-                <p class="text-gray-600">Grupo Cordeiro | Julho de 2024 - Maio de 2025 (11 meses)</p>
+                <p class="text-gray-600"><span class="company-name">Grupo Cordeiro</span> | Julho de 2024 - Maio de 2025 (11 meses)</p>
                 <p class="text-gray-600">Norte e Nordeste</p>
                 <ul class="mt-2">
-                    <li>Coordenação de obras civis e prediais em unidades do Norte e Nordeste.</li>
+                    <li>Coordenação de obras civis/prediais (Norte/Nordeste).</li>
                     <li>Gestão de projetos, melhorias e manutenções.</li>
-                    <li>Compatibilização de projetos e execução.</li>
-                    <li>Interface com alta administração para planos de negócios.</li>
+                    <li>Compatibilização e execução de projetos.</li>
+                    <li>Interface com alta administração em planos de negócios.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Engenheiro de SSMA</h3>
-                <p class="text-gray-600">Grupo Cordeiro | Setembro de 2023 - Julho de 2024 (11 meses)</p>
+                <p class="text-gray-600"><span class="company-name">Grupo Cordeiro</span> | Setembro de 2023 - Julho de 2024 (11 meses)</p>
                 <p class="text-gray-600">Norte e Nordeste</p>
                 <ul class="mt-2">
                     <li>Gestão de SSMA e conformidade legal.</li>
-                    <li>Treinamentos e laudos técnicos (vasos de pressão, máquinas).</li>
-                    <li>Licenciamentos ambientais e segurança em obras.</li>
+                    <li>Elaboração de treinamentos e laudos técnicos (vasos de pressão, máquinas).</li>
+                    <li>Licenciamentos ambientais e segurança em canteiros de obra.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Coordenador Regional SR. de Manutenção</h3>
-                <p class="text-gray-600">Assaí Atacadista - GPA | Abril de 2018 - Setembro de 2021 (3 anos e 6 meses)</p>
+                <p class="text-gray-600"><span class="company-name">Assaí Atacadista - GPA</span> | Abril de 2018 - Setembro de 2021 (3 anos e 6 meses)</p>
                 <p class="text-gray-600">Fortaleza, Ceará</p>
                 <ul class="mt-2">
-                    <li>Responsável pelo planejamento e controle de manutenção preventiva e corretiva em sistemas de refrigeração, ar-condicionado, elétrica e predial, com foco em produtividade, redução de custos e segurança.</li>
-                    <li>Atuou no planejamento estratégico de investimentos, controle de despesas e gestão de equipes próprias e terceirizadas, garantindo alta performance operacional e suporte à expansão de lojas.</li>
-                    <li>Desenvolveu fornecedores, treinou equipes técnicas e implementou melhorias com base na análise de indicadores e padrões de falhas, assegurando destaque regional nos estados do CE, PI e MA.</li>
+                    <li>Planejamento e controle de manutenção (preventiva/corretiva) em refrigeração, ar-condicionado, elétrica e predial, visando produtividade, redução de custos e segurança.</li>
+                    <li>Planejamento estratégico de investimentos, controle de despesas e gestão de equipes (próprias/terceirizadas), garantindo alta performance e suporte à expansão de lojas.</li>
+                    <li>Desenvolvimento de fornecedores, treinamento de equipes e implementação de melhorias (análise de indicadores), com destaque regional (CE, PI e MA).</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Engenheiro de Segurança</h3>
-                <p class="text-gray-600">Pinheiro Supermercado | Abril de 2017 - Abril de 2018 (1 ano e 1 mês)</p>
+                <p class="text-gray-600"><span class="company-name">Pinheiro Supermercado</span> | Abril de 2017 - Abril de 2018 (1 ano e 1 mês)</p>
                 <p class="text-gray-600">Fortaleza e Região, Brasil</p>
                 <ul class="mt-2">
-                    <li>Responsável pelo planejamento e controle das atividades de Segurança do Trabalho em todas as empresas do grupo, com atuação direta em campo e na realização de auditorias internas.</li>
-                    <li>Coordenação de programas legais como PCMSO e PPRA, com foco na conformidade normativa e na proposição de melhorias contínuas.</li>
-                    <li>Gestão de investimentos em segurança por meio de controles informatizados e análises comparativas, além do desenvolvimento de políticas e treinamentos alinhados às exigências do Ministério do Trabalho e Emprego (MTE), promovendo um ambiente de trabalho mais seguro e eficiente.</li>
+                    <li>Planejamento e controle de segurança do trabalho em todas as empresas do grupo, com atuação em campo e auditorias internas.</li>
+                    <li>Coordenação de programas legais (PCMSO, PPRA), focando na conformidade e melhoria contínua.</li>
+                    <li>Gestão de investimentos em segurança (controles informatizados/análises comparativas); desenvolvimento de políticas e treinamentos alinhados ao MTE, visando ambiente de trabalho seguro e eficiente.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Coordenador de Manutenção Sr.</h3>
-                <p class="text-gray-600">GPA | Setembro de 2014 - Novembro de 2016 (2 anos e 3 meses)</p>
+                <p class="text-gray-600"><span class="company-name">GPA</span> | Setembro de 2014 - Novembro de 2016 (2 anos e 3 meses)</p>
                 <ul class="mt-2">
-                    <li>Planejamento e controle de atividades de manutenção focados no alcance da melhor produtividade associado à redução de custos, aumento da qualidade e segurança dos serviços, utilizando conhecimentos em engenharia de segurança no trabalho, atingindo mensalmente as metas de serviços e custos diretos e variáveis.</li>
-                    <li>Planejamento estratégico de investimentos em diversas áreas da empresa na área de Manutenção, distribuídas em refrigeração, ar-condicionado, elétrica e predial, realizando preventivas e coordenando corretivas programadas, propondo melhorias visando garantir todo o processo executivo e participando diretamente nos resultados da regional para garantir o atendimento das metas de participação da empresa no mercado sem paradas críticas que prejudicassem as vendas, controlando as equipes fixas das lojas, assim como controle de serviços realizados por terceirizadas com contratos e auxílio direto à divisão de obras do grupo nas etapas de expansão de lojas e grandes reformas.</li>
+                    <li>Planejamento e controle de manutenção para produtividade, redução de custos, qualidade e segurança, com foco em engenharia de segurança e metas mensais.</li>
+                    <li>Planejamento estratégico de investimentos (refrigeração, ar-condicionado, elétrica, predial), incluindo preventivas e corretivas programadas, garantindo resultados regionais e evitando paradas críticas.</li>
+                    <li>Controle de equipes (próprias/terceirizadas) e suporte à expansão/reformas.</li>
+                    <li>Gestão de despesas e serviços públicos (controles informatizados/comparativos); desenvolvimento de parcerias e novos fornecedores, assegurando destaque regional (CE/PI) em níveis de serviço.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Engenheiro de Segurança - Contrato Determinado</h3>
-                <p class="text-gray-600">QUEIROZ GALVÃO ENGENHARIA | Agosto de 2014 - Dezembro de 2014 (5 meses)</p>
+                <p class="text-gray-600"><span class="company-name">QUEIROZ GALVÃO ENGENHARIA</span> | Agosto de 2014 - Dezembro de 2014 (5 meses)</p>
                 <p class="text-gray-600">Fortaleza</p>
                 <ul class="mt-2">
-                    <li>Participou da criação do projeto executivo de sistemas de proteções coletivas em segurança do trabalho, focado nas estruturas de sustentação e construção de um novo viaduto.</li>
-                    <li>Após uma criteriosa avaliação técnica, recebeu a missão de identificar todos os pontos críticos e oportunidades na construção das estruturas necessárias, garantindo que fossem viáveis dentro do cronograma da obra, sem comprometer sua execução.</li>
-                    <li>O principal objetivo era claro: minimizar os riscos de acidentes e preservar a integridade da equipe durante toda a execução.</li>
-                    <li>O projeto contou com acompanhamento semanal da Galvão Engenharia, assegurando a conformidade das ações com o planejamento. Resultado: 100% de êxito e zero acidentes.</li>
+                    <li>Criação de projeto executivo para sistemas de proteções coletivas em segurança do trabalho para novo viaduto.</li>
+                    <li>Avaliação técnica criteriosa para identificar pontos críticos/oportunidades, garantindo viabilidade e cronograma.</li>
+                    <li>Objetivo: minimizar riscos de acidentes e preservar integridade da equipe.</li>
+                    <li>Acompanhamento semanal da Galvão Engenharia. Resultado: 100% de êxito e zero acidentes.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Engenheiro de Segurança - Segurança do Trabalho em Obras de Infraestrutura</h3>
-                <p class="text-gray-600">Construtora Queiroz Galvão Brasil | Agosto de 2014 - Outubro de 2014 (3 meses)</p>
+                <p class="text-gray-600"><span class="company-name">Construtora Queiroz Galvão Brasil</span> | Agosto de 2014 - Outubro de 2014 (3 meses)</p>
                 <p class="text-gray-600">Fortaleza e Região, Brasil</p>
                 <ul class="mt-2">
-                    <li>Atuou na elaboração do projeto executivo para a implantação de sistemas de proteções coletivas em segurança do trabalho, voltado às estruturas de sustentação e construção de um novo viaduto.</li>
-                    <li>Após um processo de avaliação técnica detalhado, recebeu a responsabilidade de identificar e analisar os pontos positivos e críticos da obra, com o objetivo de propor soluções seguras e viáveis dentro do prazo estipulado, sem impactar a continuidade da execução.</li>
-                    <li>A principal meta foi garantir a redução de riscos de acidentes durante a obra, preservando a segurança dos profissionais envolvidos e assegurando a conformidade com os prazos e normas técnicas.</li>
-                    <li>O projeto contou com acompanhamento técnico semanal da empresa Galvão Engenharia, e o resultado foi altamente satisfatório: execução bem-sucedida com 100% de segurança e zero acidentes registrados.</li>
+                    <li>Elaboração de projeto executivo para sistemas de proteções coletivas em segurança do trabalho para novo viaduto.</li>
+                    <li>Avaliação técnica detalhada para identificar pontos positivos/críticos, propondo soluções seguras e viáveis dentro do prazo.</li>
+                    <li>Meta: reduzir riscos de acidentes, preservar segurança dos profissionais e garantir conformidade com prazos/normas.</li>
+                    <li>Acompanhamento técnico semanal da Galvão Engenharia. Resultado: execução bem-sucedida com 100% de segurança e zero acidentes.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Engenheiro de Segurança do Trabalho</h3>
-                <p class="text-gray-600">Construtora Porto Freire | Janeiro de 2013 - Setembro de 2014 (1 ano e 9 meses)</p>
+                <p class="text-gray-600"><span class="company-name">Construtora Porto Freire</span> | Janeiro de 2013 - Setembro de 2014 (1 ano e 9 meses)</p>
                 <p class="text-gray-600">Fortaleza</p>
                 <ul class="mt-2">
-                    <li>Responsável pelo planejamento e controle de atividades em segurança do trabalho, atuando diretamente em campo e realizando auditorias em todas as empresas do grupo.</li>
-                    <li>Coordenou a implementação e o acompanhamento de programas legais obrigatórios, como PCMSO, PPRA e PCMAT, sempre com foco na conformidade com a legislação vigente e as exigências normativas da ISO.</li>
-                    <li>Propôs melhorias contínuas nos processos, visando garantir a conformidade legal e normativas aplicáveis.</li>
-                    <li>Controle e gestão de investimentos em segurança do trabalho, utilizando ferramentas informatizadas, dashboards e mapas comparativos para tomada de decisão.</li>
-                    <li>Desenvolvimento de políticas internas e treinamentos alinhados às diretrizes do Ministério do Trabalho e Emprego (MTE), promovendo um ambiente de trabalho mais seguro e produtivo.</li>
+                    <li>Planejamento e controle de atividades de segurança do trabalho, com atuação em campo e auditorias internas.</li>
+                    <li>Coordenação e acompanhamento de programas legais (PCMSO, PPRA, PCMAT), focando na conformidade legal e normativa (ISO).</li>
+                    <li>Proposição de melhorias contínuas.</li>
+                    <li>Gestão de investimentos em segurança (ferramentas informatizadas, dashboards, mapas comparativos).</li>
+                    <li>Desenvolvimento de políticas internas e treinamentos alinhados ao MTE, promovendo ambiente de trabalho seguro e produtivo.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Chefe de Manutenção Sr.</h3>
-                <p class="text-gray-600">GPA | Dezembro de 2003 - Dezembro de 2012 (9 anos e 1 mês)</p>
+                <p class="text-gray-600"><span class="company-name">GPA</span> | Dezembro de 2003 - Dezembro de 2012 (9 anos e 1 mês)</p>
                 <p class="text-gray-600">Fortaleza</p>
                 <ul class="mt-2">
-                    <li>Responsável pelo controle das atividades de manutenção e gestão de investimentos nas áreas de refrigeração, ar-condicionado, elétrica e infraestrutura predial.</li>
-                    <li>Atuou na execução de manutenções preventivas e coordenação de ações corretivas programadas, sempre com foco na melhoria contínua dos processos e na eficiência operacional.</li>
-                    <li>Gestão de despesas operacionais e serviços públicos por meio de sistemas informatizados e análises comparativas.</li>
-                    <li>Desenvolvimento de parcerias estratégicas com empresas terceirizadas e prospecção de novos fornecedores, alinhados às necessidades e padrões de qualidade do grupo.</li>
+                    <li>Controle de atividades de manutenção e gestão de investimentos em refrigeração, ar-condicionado, elétrica e infraestrutura predial.</li>
+                    <li>Execução de manutenções preventivas e coordenação de corretivas programadas, visando melhoria contínua e eficiência operacional.</li>
+                    <li>Gestão de despesas operacionais e serviços públicos (sistemas informatizados/análises comparativas).</li>
+                    <li>Desenvolvimento de parcerias com terceirizadas e prospecção de novos fornecedores, alinhados às necessidades do grupo.</li>
                 </ul>
             </div>
         </section>
