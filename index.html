@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleber Freire | Engenheiro Mecânico</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for professional touches -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scroll for internal links */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 2rem 0;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative; /* For image positioning */
+        }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        .profile-image-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #3498db;
+            border: 5px solid #ecf0f1;
+            margin: 0 auto 1.5rem auto; /* Center and add space */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Ensure image fits */
+        }
+        .profile-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Initial state for animation */
+            transform: translateY(20px); /* Initial state for animation */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section h2 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            display: flex; /* For icon alignment */
+            align-items: center;
+        }
+        .section h2 svg {
+            margin-right: 0.75rem; /* Space between icon and text */
+            color: #3498db; /* Icon color */
+        }
+        .section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #3498db;
+            border-radius: 2px;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .experience-item h3, .education-item h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item p, .education-item p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            color: #555;
+        }
+        .experience-item ul li {
+            margin-bottom: 0.5rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        .skill-item {
+            background-color: #ecf0f1;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #2c3e50;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info p {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        .contact-info a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+            .section h2 {
+                font-size: 1.8rem;
+            }
+            .experience-item h3, .education-item h3 {
+                font-size: 1.5rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .section {
+                padding: 1.5rem;
+            }
+            .profile-image-placeholder {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="profile-image-placeholder">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHE8hpR3JjXxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668833771045?e=1755734400&v=beta&t=I3OJQ1N7WiGolpwTWD1KHNp3vux0W_0VSxDULqCJ5mo" alt="Foto de Perfil de Kleber Freire">
+        </div>
+        <div class="container">
+            <h1>Kleber Freire</h1>
+            <p>Gestor de Engenharia e Manutenção | Expertise em SSMA, Projetos e Eficiência Operacional | Atuação Nacional</p>
+            <p class="mt-2 text-lg">Fortaleza, Ceará, Brasil</p>
+        </div>
+    </div>
+
+    <div class="container mt-8">
+        <section id="summary" class="section">
+            <h2><i data-lucide="info"></i>Resumo</h2>
+            <p class="text-lg text-gray-700">Engenheiro Mecânico com mais de 25 anos de experiência em manutenção industrial, engenharia civil, infraestrutura e segurança do trabalho, atuando em empresas de grande porte como Grupo Cordeiro, Assaí Atacadista, Grupo Pão de Açúcar e Queiroz Galvão.</p>
+            <p class="text-lg text-gray-700 mt-4">Possui sólida formação com especializações em Gestão de Projetos, Engenharia de Segurança e Gestão Empresarial, além de forte atuação em liderança de equipes multidisciplinares, planejamento estratégico, controle de custos e conformidade legal (NRs e SSMA).</p>
+            <p class="text-lg text-gray-700 mt-4">Tem histórico comprovado de entrega de resultados, com foco em eficiência operacional, redução de custos, melhoria contínua e excelência técnica.</p>
+            <p class="text-lg text-gray-700 mt-4">Busca contribuir com organizações que valorizem inovação, segurança e performance em engenharia.</p>
+        </section>
+
+        <section id="experience" class="section">
+            <h2><i data-lucide="briefcase"></i>Experiência</h2>
+
+            <div class="experience-item">
+                <h3>Gerente de Engenharia e Manutenção</h3>
+                <p class="text-gray-600">Grupo Cordeiro | Julho de 2024 - Maio de 2025 (11 meses)</p>
+                <p class="text-gray-600">Norte e Nordeste</p>
+                <ul class="mt-2">
+                    <li>Coordenação de obras civis e prediais em unidades do Norte e Nordeste.</li>
+                    <li>Gestão de projetos, melhorias e manutenções.</li>
+                    <li>Compatibilização de projetos e execução.</li>
+                    <li>Interface com alta administração para planos de negócios.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engenheiro de SSMA</h3>
+                <p class="text-gray-600">Grupo Cordeiro | Setembro de 2023 - Julho de 2024 (11 meses)</p>
+                <p class="text-gray-600">Norte e Nordeste</p>
+                <ul class="mt-2">
+                    <li>Gestão de SSMA e conformidade legal.</li>
+                    <li>Treinamentos e laudos técnicos (vasos de pressão, máquinas).</li>
+                    <li>Licenciamentos ambientais e segurança em obras.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Coordenador Regional SR. de Manutenção</h3>
+                <p class="text-gray-600">Assaí Atacadista - GPA | Abril de 2018 - Setembro de 2021 (3 anos e 6 meses)</p>
+                <p class="text-gray-600">Fortaleza, Ceará</p>
+                <ul class="mt-2">
+                    <li>Responsável pelo planejamento e controle de manutenção preventiva e corretiva em sistemas de refrigeração, ar-condicionado, elétrica e predial, com foco em produtividade, redução de custos e segurança.</li>
+                    <li>Atuou no planejamento estratégico de investimentos, controle de despesas e gestão de equipes próprias e terceirizadas, garantindo alta performance operacional e suporte à expansão de lojas.</li>
+                    <li>Desenvolveu fornecedores, treinou equipes técnicas e implementou melhorias com base na análise de indicadores e padrões de falhas, assegurando destaque regional nos estados do CE, PI e MA.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engenheiro de Segurança</h3>
+                <p class="text-gray-600">Pinheiro Supermercado | Abril de 2017 - Abril de 2018 (1 ano e 1 mês)</p>
+                <p class="text-gray-600">Fortaleza e Região, Brasil</p>
+                <ul class="mt-2">
+                    <li>Responsável pelo planejamento e controle das atividades de Segurança do Trabalho em todas as empresas do grupo, com atuação direta em campo e na realização de auditorias internas.</li>
+                    <li>Coordenação de programas legais como PCMSO e PPRA, com foco na conformidade normativa e na proposição de melhorias contínuas.</li>
+                    <li>Gestão de investimentos em segurança por meio de controles informatizados e análises comparativas, além do desenvolvimento de políticas e treinamentos alinhados às exigências do Ministério do Trabalho e Emprego (MTE), promovendo um ambiente de trabalho mais seguro e eficiente.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Coordenador de Manutenção Sr.</h3>
+                <p class="text-gray-600">GPA | Setembro de 2014 - Novembro de 2016 (2 anos e 3 meses)</p>
+                <ul class="mt-2">
+                    <li>Planejamento e controle de atividades de manutenção focados no alcance da melhor produtividade associado à redução de custos, aumento da qualidade e segurança dos serviços, utilizando conhecimentos em engenharia de segurança no trabalho, atingindo mensalmente as metas de serviços e custos diretos e variáveis.</li>
+                    <li>Planejamento estratégico de investimentos em diversas áreas da empresa na área de Manutenção, distribuídas em refrigeração, ar-condicionado, elétrica e predial, realizando preventivas e coordenando corretivas programadas, propondo melhorias visando garantir todo o processo executivo e participando diretamente nos resultados da regional para garantir o atendimento das metas de participação da empresa no mercado sem paradas críticas que prejudicassem as vendas, controlando as equipes fixas das lojas, assim como controle de serviços realizados por terceirizadas com contratos e auxílio direto à divisão de obras do grupo nas etapas de expansão de lojas e grandes reformas.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engenheiro de Segurança - Contrato Determinado</h3>
+                <p class="text-gray-600">QUEIROZ GALVÃO ENGENHARIA | Agosto de 2014 - Dezembro de 2014 (5 meses)</p>
+                <p class="text-gray-600">Fortaleza</p>
+                <ul class="mt-2">
+                    <li>Participou da criação do projeto executivo de sistemas de proteções coletivas em segurança do trabalho, focado nas estruturas de sustentação e construção de um novo viaduto.</li>
+                    <li>Após uma criteriosa avaliação técnica, recebeu a missão de identificar todos os pontos críticos e oportunidades na construção das estruturas necessárias, garantindo que fossem viáveis dentro do cronograma da obra, sem comprometer sua execução.</li>
+                    <li>O principal objetivo era claro: minimizar os riscos de acidentes e preservar a integridade da equipe durante toda a execução.</li>
+                    <li>O projeto contou com acompanhamento semanal da Galvão Engenharia, assegurando a conformidade das ações com o planejamento. Resultado: 100% de êxito e zero acidentes.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engenheiro de Segurança - Segurança do Trabalho em Obras de Infraestrutura</h3>
+                <p class="text-gray-600">Construtora Queiroz Galvão Brasil | Agosto de 2014 - Outubro de 2014 (3 meses)</p>
+                <p class="text-gray-600">Fortaleza e Região, Brasil</p>
+                <ul class="mt-2">
+                    <li>Atuou na elaboração do projeto executivo para a implantação de sistemas de proteções coletivas em segurança do trabalho, voltado às estruturas de sustentação e construção de um novo viaduto.</li>
+                    <li>Após um processo de avaliação técnica detalhado, recebeu a responsabilidade de identificar e analisar os pontos positivos e críticos da obra, com o objetivo de propor soluções seguras e viáveis dentro do prazo estipulado, sem impactar a continuidade da execução.</li>
+                    <li>A principal meta foi garantir a redução de riscos de acidentes durante a obra, preservando a segurança dos profissionais envolvidos e assegurando a conformidade com os prazos e normas técnicas.</li>
+                    <li>O projeto contou com acompanhamento técnico semanal da empresa Galvão Engenharia, e o resultado foi altamente satisfatório: execução bem-sucedida com 100% de segurança e zero acidentes registrados.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engenheiro de Segurança do Trabalho</h3>
+                <p class="text-gray-600">Construtora Porto Freire | Janeiro de 2013 - Setembro de 2014 (1 ano e 9 meses)</p>
+                <p class="text-gray-600">Fortaleza</p>
+                <ul class="mt-2">
+                    <li>Responsável pelo planejamento e controle de atividades em segurança do trabalho, atuando diretamente em campo e realizando auditorias em todas as empresas do grupo.</li>
+                    <li>Coordenou a implementação e o acompanhamento de programas legais obrigatórios, como PCMSO, PPRA e PCMAT, sempre com foco na conformidade com a legislação vigente e as exigências normativas da ISO.</li>
+                    <li>Propôs melhorias contínuas nos processos, visando garantir a conformidade legal e normativas aplicáveis.</li>
+                    <li>Controle e gestão de investimentos em segurança do trabalho, utilizando ferramentas informatizadas, dashboards e mapas comparativos para tomada de decisão.</li>
+                    <li>Desenvolvimento de políticas internas e treinamentos alinhados às diretrizes do Ministério do Trabalho e Emprego (MTE), promovendo um ambiente de trabalho mais seguro e produtivo.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Chefe de Manutenção Sr.</h3>
+                <p class="text-gray-600">GPA | Dezembro de 2003 - Dezembro de 2012 (9 anos e 1 mês)</p>
+                <p class="text-gray-600">Fortaleza</p>
+                <ul class="mt-2">
+                    <li>Responsável pelo controle das atividades de manutenção e gestão de investimentos nas áreas de refrigeração, ar-condicionado, elétrica e infraestrutura predial.</li>
+                    <li>Atuou na execução de manutenções preventivas e coordenação de ações corretivas programadas, sempre com foco na melhoria contínua dos processos e na eficiência operacional.</li>
+                    <li>Gestão de despesas operacionais e serviços públicos por meio de sistemas informatizados e análises comparativas.</li>
+                    <li>Desenvolvimento de parcerias estratégicas com empresas terceirizadas e prospecção de novos fornecedores, alinhados às necessidades e padrões de qualidade do grupo.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2><i data-lucide="award"></i>Principais Competências</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Liderança</div>
+                <div class="skill-item">Comunicação</div>
+                <div class="skill-item">Resiliência</div>
+                <div class="skill-item">Gestão de Projetos</div>
+                <div class="skill-item">Segurança do Trabalho</div>
+                <div class="skill-item">Gestão Empresarial</div>
+                <div class="skill-item">Planejamento Estratégico</div>
+                <div class="skill-item">Controle de Custos</div>
+                <div class="skill-item">Conformidade Legal (NRs, SSMA)</div>
+                <div class="skill-item">Eficiência Operacional</div>
+                <div class="skill-item">Melhoria Contínua</div>
+                <div class="skill-item">Excelência Técnica</div>
+                <div class="skill-item">Liderança de Equipes</div>
+                <div class="skill-item">Gestão de Infraestrutura</div>
+                <div class="skill-item">Engenharia Civil</div>
+                <div class="skill-item">Manutenção Industrial</div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2><i data-lucide="graduation-cap"></i>Formação Acadêmica</h2>
+            <div class="education-item">
+                <h3>Engenharia Mecânica</h3>
+                <p class="text-gray-600">Universidade de Fortaleza | 2001</p>
+            </div>
+            <div class="education-item">
+                <h3>MBA em Estratégia e Gestão Empresarial, Administração de Empresas</h3>
+                <p class="text-gray-600">Universidade Estadual do Ceará | 2001 - 2003</p>
+            </div>
+            <div class="education-item">
+                <h3>Engenheiro de Segurança no Trabalho, Engenharia de Segurança</h3>
+                <p class="text-gray-600">Faculdade Ateneu | 2012</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-info">
+            <h2><i data-lucide="mail"></i>Contato</h2>
+            <p><strong>Email:</strong> <a href="mailto:kleber.freire@hotmail.com">kleber.freire@hotmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kleber-freire-841632134/" target="_blank">linkedin.com/in/kleber-freire-841632134</a></p>
+            <p><strong>Idiomas:</strong> Inglês, Português</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Kleber Freire. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.error("Lucide is not defined. Make sure the script is loaded correctly.");
+            }
+
+            // Intersection Observer for fade-in effect on sections
+            const sections = document.querySelectorAll('.section');
+
+            const observerOptions = {
+                root: null, // relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of the section must be visible
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Smooth scrolling for navigation (if a nav menu were added)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
